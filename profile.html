@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - BB Street</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="img/logo.webp" alt="BB Street Logo">
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="#" id="logoutButton" class="profile-settings">🚪 Logout</a>
+        </div>
+    </header>
+
+    <!-- Konten Profil -->
+    <main class="profile-container">
+        <div class="profile-box">
+            <h2>Profil Saya</h2>
+
+            <!-- Foto Profil & Info -->
+            <div class="profile-header">
+                <div class="profile-picture">
+                    <img id="profileImage" src="img/default-avatar.png" alt="Foto Profil">
+                    <label for="uploadImage" class="upload-label">📷 Upload Foto</label>
+                    <input type="file" id="uploadImage" accept="image/*">
+                </div>
+                <div class="profile-info">
+                    <p><strong>Nama:</strong> <span id="usernameDisplay"></span></p>
+                    <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
+                    <a href="index.html" class="btn-home">🏠 Kembali ke Home</a>
+                </div>
+            </div>
+
+            <!-- Menu Tabs -->
+            <div class="profile-menu">
+                <button class="tab-link active" data-tab="transaksi">🛍 Transaksi</button>
+                <button class="tab-link" data-tab="alamat">📍 Pengaturan Alamat</button>
+                <button class="tab-link" data-tab="pembayaran">💳 Pembayaran</button>
+            </div>
+
+            <!-- Konten Tabs -->
+            <div class="tab-content active" id="transaksi">
+                <h3>Riwayat Transaksi</h3>
+                <div id="transactionHistory">
+                    <p>Belum ada transaksi.</p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="alamat">
+                <h3>Pengaturan Alamat</h3>
+                <form id="addressForm">
+                    <div class="input-group">
+                        <label for="addressName">Nama Penerima:</label>
+                        <input type="text" id="addressName" placeholder="Masukkan nama penerima" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="addressPhone">Nomor Telepon:</label>
+                        <input type="tel" id="addressPhone" placeholder="Masukkan nomor telepon" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="addressDetail">Alamat Lengkap:</label>
+                        <textarea id="addressDetail" placeholder="Masukkan alamat lengkap" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-account">Simpan Alamat</button>
+                </form>
+                <div id="savedAddresses"></div>
+            </div>
+
+            <div class="tab-content" id="pembayaran">
+                <h3>Metode Pembayaran</h3>
+                <form id="paymentForm">
+                    <div class="input-group">
+                        <label for="paymentMethod">Pilih Metode Pembayaran:</label>
+                        <select id="paymentMethod" required>
+                            <option value="transfer">Transfer Bank</option>
+                            <option value="credit-card">Kartu Kredit</option>
+                            <option value="e-wallet">E-Wallet (GoPay, OVO, Dana)</option>
+                            <option value="cod">Bayar di Tempat (COD)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="paymentDetails">Detail Pembayaran:</label>
+                        <input type="text" id="paymentDetails" placeholder="Masukkan detail pembayaran" required>
+                    </div>
+                    <button type="submit" class="btn-account">Simpan Metode Pembayaran</button>
+                </form>
+                <div id="savedPayments"></div>
+            </div>
+
+            <!-- Form Edit Profil -->
+            <div class="edit-profile">
+                <h3>Edit Profil</h3>
+                <div class="input-group">
+                    <label for="editName">Nama:</label>
+                    <input type="text" id="editName" placeholder="Masukkan nama baru">
+                </div>
+                <div class="input-group">
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" placeholder="Masukkan email baru">
+                </div>
+                <button id="saveProfile" class="btn-account">Simpan Perubahan</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Tentang BB Street</h3>
+                <p>BB Street adalah destinasi utama bagi pecinta fashion streetwear yang mencari gaya unik, trendi, dan berkualitas tinggi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><strong>Alamat:</strong> Jl. Made Gondo Ds. Miru Kec. Sekaran, Kab. Lamongan, Jawa Timur, Indonesia</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/6281218253830" target="_blank">+62 812-1825-3830</a></p>
+                <p><strong>Email:</strong> <a href="mailto:contact@bbstreet.com">contact@bbstreet.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <p>Ikuti kami untuk update terbaru:</p>
+                <a href="https://www.instagram.com/bbstreet" target="_blank">Instagram</a> |
+                <a href="https://www.facebook.com/bbstreet" target="_blank">Facebook</a> |
+                <a href="https://www.twitter.com/bbstreet" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BB Street. All Rights Reserved. | <a href="privacy-policy.html">Kebijakan Privasi</a> | <a href="terms.html">Syarat & Ketentuan</a></p>
+        </div>
+    </footer>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

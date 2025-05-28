@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akun - BB Street</title>
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="img/logo.webp" alt="BB Street Logo">
+            </a>
+        </div>
+    </header>
+
+    <main class="account-container">
+        <div class="account-box">
+            <h2>Selamat Datang di <span class="brand-name">BB Street</span></h2>
+            <p class="subtitle">Silakan masuk atau daftar untuk melanjutkan.</p>
+
+            <!-- Tab untuk Login dan Daftar -->
+            <div class="tabs">
+                <button class="tab-link active" data-tab="login">Login</button>
+                <button class="tab-link" data-tab="register">Daftar</button>
+            </div>
+
+            <!-- Form Login -->
+            <form id="loginForm" class="tab-content active" data-tab="login">
+                <div class="input-group">
+                    <label for="username">Username atau Email:</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="Masukkan email atau username" required autocomplete="username">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Password:</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" name="password" placeholder="Masukkan password" required autocomplete="current-password">
+                    </div>
+                </div>
+                <a href="forgot-password.html" class="forgot-password">Lupa Password?</a>
+                <button type="submit" class="btn-account">
+                    <span>Login</span>
+                    <div id="loginSpinner" class="loading-spinner"></div>
+                </button>
+                <div id="loginError" class="error-message"></div>
+            </form>
+
+            <!-- Form Daftar -->
+            <form id="registerForm" class="tab-content" data-tab="register">
+                <div class="input-group">
+                    <label for="fullname">Nama Lengkap:</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user-circle"></i>
+                        <input type="text" id="fullname" name="fullname" placeholder="Nama lengkap" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Masukkan email" required autocomplete="email">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="registerPassword">Password:</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="registerPassword" name="password" placeholder="Buat password (minimal 6 karakter)" required autocomplete="new-password">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="registerConfirmPassword">Konfirmasi Password:</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-check-circle"></i>
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword" placeholder="Ulangi password" required autocomplete="new-password">
+                    </div>
+                </div>
+                <button type="submit" class="btn-account">
+                    <span>Daftar</span>
+                    <div id="registerSpinner" class="loading-spinner"></div>
+                </button>
+                <div id="registerError" class="error-message"></div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Tentang BB Street</h3>
+                <p>BB Street adalah destinasi utama bagi pecinta fashion streetwear yang mencari gaya unik, trendi, dan berkualitas tinggi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><strong>Alamat:</strong> Jl. Made Gondo Ds. Miru Kec. Sekaran, Kab. Lamongan, Jawa Timur, Indonesia</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/6281218253830" target="_blank">+62 812-1825-3830</a></p>
+                <p><strong>Email:</strong> <a href="mailto:contact@bbstreet.com">contact@bbstreet.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <p>Ikuti kami untuk update terbaru:</p>
+                <a href="https://www.instagram.com/bbstreet" target="_blank">Instagram</a> |
+                <a href="https://www.facebook.com/bbstreet" target="_blank">Facebook</a> |
+                <a href="https://www.twitter.com/bbstreet" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BB Street. All Rights Reserved. | <a href="privacy-policy.html">Kebijakan Privasi</a> | <a href="terms.html">Syarat & Ketentuan</a></p>
+        </div>
+    </footer>
+
+    <script src="js/account.js"></script>
+</body>
+</html>

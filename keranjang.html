@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <link rel="stylesheet" href="css/keranjang.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="img/logo.webp" alt="BB Street Logo"> 
+            </a>
+            <div class="nav-icons">
+                <a href="shop.html">🛍️</a>
+                <a href="#" id="accountLink">👤</a>
+                <a href="keranjang.html" class="active">🛒 (<span id="cart-count">0</span>)</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Keranjang Belanja</h1>
+        <div class="cart-container">
+            <div id="cart-items" class="cart-items">
+                <p id="empty-cart-msg" style="text-align: center; display: none;">
+                    Keranjang kosong. <a href='shop.html' class='shop-link'>Kembali Berbelanja</a>
+                </p>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Total: <span id="cart-total">Rp 0</span></h2>
+                <button id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/cart.js"></script>
+    <script src="js/account-check.js"></script>
+</body>
+</html>

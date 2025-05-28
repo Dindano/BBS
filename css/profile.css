@@ -1,0 +1,307 @@
+/* ===================== RESET & VARIABEL WARNA ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #d27d2c; /* Oranye kecoklatan */
+    --hover-color: #b86420; /* Warna lebih gelap */
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --navbar-color: white;
+    --navbar-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ===================== BODY ===================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    padding-top: 70px; /* Agar navbar tidak menutupi konten */
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-color);
+    box-shadow: 0 4px 10px var(--navbar-shadow);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-left .logo img {
+    height: 50px;
+    max-width: 100%;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: var(--primary-color);
+}
+
+/* ===================== PROFILE ===================== */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+/* Profile Box */
+.profile-box {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Header Profil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+
+.profile-picture {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    object-fit: cover;
+}
+
+.profile-picture input {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Informasi Pengguna */
+.profile-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+/* Tombol Kembali ke Home */
+.btn-home {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.btn-home:hover {
+    background: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* ===================== MENU PROFIL (TABS) ===================== */
+.profile-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+    width: 100%;
+}
+
+.tab-link {
+    flex: 1;
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tab-link:hover,
+.tab-link.active {
+    background: var(--hover-color);
+}
+
+/* Konten Tabs */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ===================== FORM EDIT PROFIL ===================== */
+.edit-profile {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.edit-profile h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-account {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-account:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+@media (max-width: 1024px) {
+    .profile-box {
+        max-width: 500px;
+        padding: 2rem;
+    }
+
+    .profile-picture img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 40px 15px;
+        height: auto;
+    }
+
+    .profile-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-menu {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-box {
+        padding: 1rem;
+    }
+
+    .profile-picture img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .input-group input {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}

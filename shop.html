@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - BB Street</title>
+    <link rel="stylesheet" href="css/produk.css">
+    <meta name="description" content="Belanja pakaian streetwear terbaru dengan kualitas terbaik hanya di BB Street. Kemeja, kaos, sweater, cardigan, dan banyak lagi.">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.webp" alt="BB Street">
+            </a>
+        </div>
+        <div class="nav-icons">
+            <a href="keranjang.html" class="cart">🛒</a>
+            <a href="#" id="accountLink">👤</a>
+
+        </div>
+    </nav>
+
+    <!-- Kategori Produk (Dengan 3 Dropdown) -->
+    <section class="kategori">
+        <h2>Pilih Kategori</h2>
+        <select id="jenis-produk">
+            <option value="all">Semua Produk</option>
+            <option value="atasan">Atasan</option>
+            <option value="luaran">Luaran</option>
+            <option value="bawahan">Bawahan</option>
+        </select>
+        
+        <select id="sub-kategori" disabled>
+            <option value="all">Pilih Sub-Kategori</option>
+        </select>
+        
+        <select id="brand-koleksi" disabled>
+            <option value="all">Pilih Brand/Koleksi</option>
+        </select>
+    </section>
+
+    <!-- Koleksi Produk -->
+    <section class="product-section">
+        <h2 class="collection-title">Our Collection</h2>
+        <div class="product-container">
+            <div class="product" data-id="1" data-title="Kemeja Salur" data-jenis="atasan" data-sub="kemeja" data-brand="brand-a" data-price="Rp 199.000">
+                <img src="img/salur.webp" alt="Kemeja Salur">
+                <p>Kemeja Salur</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 199.000</span>
+                    <button class="add-to-cart" data-id="1">🛒 Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" data-id="2" data-jenis="atasan" data-sub="kemeja" data-brand="brand-b" data-price="Rp 299.000">
+                <img src="img/Fitted Shirt.webp" alt="Kemeja Fitted Shirt">
+                <p>Kemeja Fitted Shirt</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 299.000</span>
+                    <button class="add-to-cart" data-id="2">🛒 Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" data-id="3" data-jenis="atasan" data-sub="kemeja" data-brand="brand-b" data-price="Rp 299.000">
+                <img src="img/Kemeja Korduroi.webp" alt="Kemeja Korduroi">
+                <p>Kemeja Korduroi</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 299.000</span>
+                    <button class="add-to-cart" data-id="3">🛒 Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" data-id="4" data-jenis="atasan" data-sub="kaos" data-brand="brand-b" data-price="Rp 299.000">
+                <img src="img/Fitted Shirt.webp" alt="Kemeja Fitted Shirt">
+                <p>Kemeja Fitted Shirt</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 299.000</span>
+                    <button class="add-to-cart" data-id="4">🛒 Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" data-id="5" data-jenis="atasan" data-sub="kaos" data-brand="brand-b" data-price="Rp 299.000">
+                <img src="img/Fitted Shirt.webp" alt="Kemeja Fitted Shirt">
+                <p>Kemeja Fitted Shirt</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 299.000</span>
+                    <button class="add-to-cart" data-id="5">🛒 Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" data-id="6" data-jenis="atasan" data-sub="kaos" data-brand="brand-b" data-price="Rp 299.000">
+                <img src="img/Fitted Shirt.webp" alt="Kemeja Fitted Shirt">
+                <p>Kemeja Fitted Shirt</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 299.000</span>
+                    <button class="add-to-cart" data-id="6">🛒 Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" data-id="7" data-jenis="atasan" data-sub="kaos" data-brand="brand-b" data-price="Rp 299.000">
+                <img src="img/Fitted Shirt.webp" alt="Kemeja Fitted Shirt">
+                <p>Kemeja Fitted Shirt</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 299.000</span>
+                    <button class="add-to-cart" data-id="7">🛒 Add to Cart</button>
+                </div>
+            </div>
+            <div class="product" data-id="8" data-jenis="atasan" data-sub="kaos" data-brand="brand-b" data-price="Rp 299.000">
+                <img src="img/Fitted Shirt.webp" alt="Kemeja Fitted Shirt">
+                <p>Kemeja Fitted Shirt</p>
+                <div class="product-info">
+                    <span class="product-price">Rp 299.000</span>
+                    <button class="add-to-cart" data-id="8">🛒 Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Footer Start -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Tentang BB Street</h3>
+                <p>BB Street adalah destinasi utama bagi pecinta fashion streetwear yang mencari gaya unik, trendi, dan berkualitas tinggi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><strong>Alamat:</strong> Jl. Made Gondo Ds. Miru Kec. Sekaran, Kab. Lamongan, Jawa Timur, Indonesia</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/6281218253830" target="_blank">+62 812-1825-3830</a></p>
+                <p><strong>Email:</strong> <a href="mailto:contact@bbstreet.com">contact@bbstreet.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <a href="https://www.instagram.com/bbstreet" target="_blank">Instagram</a> |
+                <a href="https://www.facebook.com/bbstreet" target="_blank">Facebook</a> |
+                <a href="https://www.twitter.com/bbstreet" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BB Street. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/account-check.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const jenisProduk = document.getElementById("jenis-produk");
+            const subKategori = document.getElementById("sub-kategori");
+            const brandKoleksi = document.getElementById("brand-koleksi");
+            const products = document.querySelectorAll(".product");
+
+            const subKategoriOptions = {
+                atasan: ["Kemeja", "Kaos"],
+                luaran: ["Jaket", "Cardigan"],
+                bawahan: ["Celana Jeans", "Jogger"]
+            };
+            
+            const brandOptions = ["Brand A", "Brand B", "Koleksi Terbaru"];
+
+            jenisProduk.addEventListener("change", () => {
+                const selectedJenis = jenisProduk.value;
+                subKategori.innerHTML = '<option value="all">Pilih Sub-Kategori</option>';
+                brandKoleksi.innerHTML = '<option value="all">Pilih Brand/Koleksi</option>';
+                
+                if (selectedJenis !== "all") {
+                    subKategoriOptions[selectedJenis].forEach(sub => {
+                        const option = document.createElement("option");
+                        option.value = sub.toLowerCase().replace(" ", "-");
+                        option.textContent = sub;
+                        subKategori.appendChild(option);
+                    });
+                    subKategori.disabled = false;
+                } else {
+                    subKategori.disabled = true;
+                    brandKoleksi.disabled = true;
+                }
+            });
+            
+            subKategori.addEventListener("change", () => {
+                brandKoleksi.innerHTML = '<option value="all">Pilih Brand/Koleksi</option>';
+                if (subKategori.value !== "all") {
+                    brandOptions.forEach(brand => {
+                        const option = document.createElement("option");
+                        option.value = brand.toLowerCase().replace(" ", "-");
+                        option.textContent = brand;
+                        brandKoleksi.appendChild(option);
+                    });
+                    brandKoleksi.disabled = false;
+                } else {
+                    brandKoleksi.disabled = true;
+                }
+            });
+
+            [jenisProduk, subKategori, brandKoleksi].forEach(filter => {
+                filter.addEventListener("change", () => {
+                    const jenis = jenisProduk.value;
+                    const sub = subKategori.value;
+                    const brand = brandKoleksi.value;
+
+                    products.forEach(product => {
+                        const matchJenis = jenis === "all" || product.dataset.jenis === jenis;
+                        const matchSub = sub === "all" || product.dataset.sub === sub;
+                        const matchBrand = brand === "all" || product.dataset.brand === brand;
+                        product.style.display = (matchJenis && matchSub && matchBrand) ? "block" : "none";
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

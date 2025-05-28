@@ -1,0 +1,260 @@
+/* CSS untuk Halaman Keluaran Produk Baru */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #222;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.navbar .logo img:hover {
+    transform: scale(1.1);
+}
+
+.search-cart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #e67e22;
+}
+
+.cart, #accountLink {
+    font-size: 24px;
+    color: white;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+    transition: color 0.3s ease;
+}
+
+.cart:hover, #accountLink:hover {
+    color: #e67e22;
+}
+
+/* Banner Section */
+.banner {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 100px 20px 40px; /* Padding atas lebih besar untuk mengakomodasi navbar fixed */
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+/* Product Section */
+.product-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.collection-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    border: none; /* Pastikan tidak ada border */
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    border: none; /* Pastikan tidak ada border */
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    font-weight: 600;
+    color: #222;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+    border-bottom: none; /* Pastikan tidak ada border-bottom */
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e67e22;
+    margin: 10px 0;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+    border-bottom: none; /* Pastikan tidak ada border-bottom */
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 10px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+.add-to-cart:hover {
+    background: #d35400;
+}
+
+/* Footer */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    text-decoration: none; /* Pastikan tidak ada garis bawah */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 150px;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .collection-title {
+        font-size: 1.8rem;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .product p {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 1.1rem;
+    }
+
+    .add-to-cart {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        width: 120px;
+        font-size: 12px;
+    }
+
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner p {
+        font-size: 0.9rem;
+    }
+
+    .collection-title {
+        font-size: 1.5rem;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .product p {
+        font-size: 0.9rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .add-to-cart {
+        font-size: 0.8rem;
+    }
+}

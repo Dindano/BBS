@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BB Street</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.webp" alt="BB Street">
+        </div>
+        <ul class="navbar-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="arrivals.html">New Arrivals</a></li>
+        </ul>
+        <div class="navbar-extra">
+            <a href="#" id="accountLink">👤</a>
+            <a href="keranjang.html" class="cart">🛒</a>
+            <a href="#" id="menu-toggle">☰</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Section Start -->
+    <section class="hero" id="home">
+        <div class="content">
+            <h1>Simple, Stylish, <span>BB Street</span></h1>
+            <p>Koleksi pakaian terbaru dengan desain modern dan nyaman.</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Koleksi Produk -->
+<section class="product-section">
+    <h2 class="collection-title">Our Collection</h2>
+    <div class="product-container">
+        <div class="product" data-id="1" data-title="Kemeja Salur" data-price="Rp 199.000" data-description="Kemeja Salur dengan desain klasik dan bahan nyaman.">
+            <img src="img/salur.webp" alt="Kemeja Salur">
+            <p>Kemeja Salur</p>
+            <div class="product-info">
+                <span class="product-price">Rp 199.000</span>
+                <button class="add-to-cart" data-id="1">🛒 Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" data-id="2" data-title="Kemeja Fitted Shirt" data-price="Rp 299.000" data-description="Kemeja Fitted Shirt untuk tampilan lebih rapi dan elegan.">
+            <img src="img/Fitted Shirt.webp" alt="Kemeja Fitted Shirt">
+            <p>Kemeja Fitted Shirt</p>
+            <div class="product-info">
+                <span class="product-price">Rp 299.000</span>
+                <button class="add-to-cart" data-id="2">🛒 Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" data-id="3" data-title="Kemeja Korduro" data-price="Rp 249.000" data-description="Korean Style Jaket cocok untuk layering dengan gaya kasual.">
+            <img src="img/Kemeja Korduroi.webp" alt="Kemeja Korduro">
+            <p>Kemeja Korduro</p>
+            <div class="product-info">
+                <span class="product-price">Rp 249.000</span>
+                <button class="add-to-cart" data-id="3">🛒 Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" data-id="4" data-title="Kemeja tambal sulam" data-price="Rp 249.000" data-description="Kemeja tambal sulam cocok untuk layering dengan gaya kasual.">
+            <img src="img/Kemeja tambal sulam.webp" alt="Kemeja tambal sulam">
+            <p>Kemeja tambal sulam</p>
+            <div class="product-info">
+                <span class="product-price">Rp 249.000</span>
+                <button class="add-to-cart" data-id="4">🛒 Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" data-id="3" data-title="Vest Basic" data-price="Rp 249.000" data-description="Vest Basic cocok untuk layering dengan gaya kasual.">
+            <img src="img/model5.webp" alt="Vest Basic">
+            <p>Vest Basic</p>
+            <div class="product-info">
+                <span class="product-price">Rp 249.000</span>
+                <button class="add-to-cart" data-id="3">🛒 Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" data-id="3" data-title="Vest Basic" data-price="Rp 249.000" data-description="Vest Basic cocok untuk layering dengan gaya kasual.">
+            <img src="img/model5.webp" alt="Vest Basic">
+            <p>Vest Basic</p>
+            <div class="product-info">
+                <span class="product-price">Rp 249.000</span>
+                <button class="add-to-cart" data-id="3">🛒 Add to Cart</button>
+            </div>
+        </div>
+        <div class="product" data-id="3" data-title="Vest Basic" data-price="Rp 249.000" data-description="Vest Basic cocok untuk layering dengan gaya kasual.">
+            <img src="img/model5.webp" alt="Vest Basic">
+            <p>Vest Basic</p>
+            <div class="product-info">
+                <span class="product-price">Rp 249.000</span>
+                <button class="add-to-cart" data-id="3">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Banner Start -->
+    <section class="banner">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/sekena_banner2.jpg" alt="Banner 1"></div>
+                <div class="swiper-slide"><img src="img/banner_lagi.jpg" alt="Banner 2"></div>
+                <div class="swiper-slide"><img src="img/banerrrrr1.jpg" alt="Banner 3"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <!-- Banner End -->
+
+
+    <!-- Modal untuk Produk -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="Product Image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalPrice"></p>
+        </div>
+    </div>
+    <!-- Modal Produk End -->
+
+    <!-- Footer Start -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Tentang BB Street</h3>
+                <p>BB Street adalah destinasi utama bagi pecinta fashion streetwear yang mencari gaya unik, trendi, dan berkualitas tinggi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><strong>Alamat:</strong> Jl. Made Gondo Ds. Miru Kec. Sekaran, Kab. Lamongan, Jawa Timur, Indonesia</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/6281218253830" target="_blank">+62 812-1825-3830</a></p>
+                <p><strong>Email:</strong> <a href="mailto:contact@bbstreet.com">contact@bbstreet.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Media Sosial</h3>
+                <a href="https://www.instagram.com/bbstreet" target="_blank">Instagram</a> |
+                <a href="https://www.facebook.com/bbstreet" target="_blank">Facebook</a> |
+                <a href="https://www.twitter.com/bbstreet" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BB Street. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/account-check.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: { delay: 3000 },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            pagination: { el: ".swiper-pagination", clickable: true }
+        });
+
+        /** ========== Fitur Redirect Akun ========== */
+        document.addEventListener("DOMContentLoaded", () => {
+            const accountLink = document.getElementById("accountLink");
+            if (accountLink) {
+                accountLink.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+                    window.location.href = isLoggedIn ? "profile.html" : "account.html";
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Tambahkan padding di body agar konten tidak tertutup */
+body {
+    padding-top: 70px; /* Sesuaikan dengan tinggi navbar */
+}
+
+
+/* Container */
+.account-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background: #f4f4f9;
+}
+
+.tab-link {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-link.active {
+    background-color: #d27d2c;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-link:hover {
+    background-color: #b86420;
+    color: white;
+}
+
+/* Forms */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #d27d2c;
+    box-shadow: 0 0 8px rgba(210, 125, 44, 0.3);
+    outline: none;
+}
+
+/* Tambahan untuk brand name */
+.brand-name {
+    color: #d27d2c;
+    font-weight: 600;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Input dengan ikon */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0.8rem;
+    background-color: #fff;
+}
+
+.input-wrapper i {
+    margin-right: 10px;
+    color: #d27d2c;
+}
+
+/* Efek hover dan focus */
+.input-wrapper input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input-wrapper:focus-within {
+    border-color: #d27d2c;
+    box-shadow: 0 0 8px rgba(210, 125, 44, 0.3);
+}
+
+/* Lupa Password */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    margin: 5px 0 15px;
+    color: #d27d2c;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+/* Buttons */
+.btn-account {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #d27d2c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-account:hover {
+    background-color: #b86420;
+    transform: scale(1.05);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    width: 25px;
+    height: 25px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    background: var(--footer-bg-color);
+    color: var(--white-color);
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 250px;
+  }
+  
+  .footer-section h3 {
+    border-bottom: 2px solid var(--footer-text-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    background: #222;
+    padding: 10px;
+    color: var(--white-color);
+  }
+  
+  .footer-section a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+/* Responsif */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section {
+        padding: 15px 0;
+    }
+}

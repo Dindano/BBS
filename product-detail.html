@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - BB Street</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.webp" alt="BB Street">
+        </div>
+        <div class="navbar-extra">
+            <a href="#" id="accountLink">👤</a>
+            <a href="keranjang.html" class="cart">🛒</a>
+        </div>
+    </nav>
+
+    <!-- Detail Produk -->
+    <section class="product-detail">
+        <div class="product-gallery">
+            <div class="main-image-container">
+                <img id="main-image" src="img/default.webp" alt="Produk">
+            </div>
+            <div class="thumbnail-container">
+                <!-- Thumbnail images will be dynamically inserted here -->
+            </div>
+        </div>
+        <div class="product-info">
+            <h1 id="product-name">Nama Produk</h1>
+            <p class="price" id="product-price">Rp 0</p>
+            <p class="description" id="product-description">Deskripsi produk.</p>
+
+            <!-- Pilihan Ukuran -->
+            <div class="size-selection">
+                <p>Pilih Ukuran:</p>
+                <button class="size-btn" data-size="S">S</button>
+                <button class="size-btn" data-size="M">M</button>
+                <button class="size-btn" data-size="L">L</button>
+                <button class="size-btn" data-size="XL">XL</button>
+            </div>
+
+            <button class="btn btn-cart">Tambah ke Keranjang</button>
+            <button class="btn btn-checkout">Checkout</button>
+        </div>
+    </section>
+
+    <script src="js/product.js"></script>
+    <script src="js/account-check.js"></script>
+</body>
+</html>

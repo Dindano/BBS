@@ -1,99 +1,76 @@
-
-
-// API: Add Item to Cart (Multiple Examples)
-// You can use these cURL commands to test different cases:
-
-// Example 1: Add a T-Shirt
-/*
-curl -X POST http://localhost:5000/api/cart \
--H "Content-Type: application/json" \
--d '{"id": 1, "name": "T-Shirt", "price": 100000, "image": "tshirt.jpg", "quantity": 1}'
-*/
-
-// Example 2: Add Sneakers
-/*
-curl -X POST http://localhost:5000/api/cart \
--H "Content-Type: application/json" \
--d '{"id": 2, "name": "Sneakers", "price": 350000, "image": "sneakers.jpg", "quantity": 1}'
-*/
-
-// Example 3: Add a Backpack
-/*
-curl -X POST http://localhost:5000/api/cart \
--H "Content-Type: application/json" \
--d '{"id": 3, "name": "Backpack", "price": 200000, "image": "backpack.jpg", "quantity": 1}'
-*/
-
-
-
-// API: Add Item to Cart
-// You can use this cURL command to test the API:
-/*
-curl -X POST http://localhost:5000/api/cart \
--H "Content-Type: application/json" \
--d '{"id": 1, "name": "T-Shirt", "price": 100000, "image": "tshirt.jpg", "quantity": 1}'
-*/
-
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
     const cartItemsContainer = document.getElementById("cart-items");
     const cartTotal = document.getElementById("cart-total");
     const cartCount = document.getElementById("cart-count");
     const checkoutButton = document.getElementById("checkout-btn");
+    const emptyCartMsg = document.getElementById("empty-cart-msg");
 
-    async function fetchCart() {
-        try {
-            const response = await fetch("http://localhost:5000/api/cart");
-            if (!response.ok) throw new Error("Gagal mengambil data keranjang");
-            const cart = await response.json();
-            renderCart(cart);
-        } catch (error) {
-            console.error("Error:", error);
-            cartItemsContainer.innerHTML = "<p>Gagal memuat keranjang.</p>";
-        }
+    function getCartFromStorage() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
     }
 
-    function renderCart(cart) {
-        cartItemsContainer.innerHTML = "";
-        let total = 0;
-        cart.forEach((item) => {
-            total += item.price * item.quantity;
-            cartItemsContainer.innerHTML += `
-                <div class="cart-item">
-                    <img src="${item.image}" alt="${item.name}">
-                    <p>${item.name}</p>
-                    <p>Rp ${item.price} x ${item.quantity}</p>
-                    <button onclick="removeFromCart('${item.id}')">Hapus</button>
+    function saveCartToStorage(cart) {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+   function renderCart() {
+    const cart = getCartFromStorage();
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+        emptyCartMsg.style.display = "block";
+        cartTotal.textContent = "Rp 0";
+        cartCount.textContent = "0";
+        return;
+    } else {
+        emptyCartMsg.style.display = "none";
+    }
+
+    cart.forEach((item, index) => {
+        // Konversi harga string menjadi angka
+        const price = Number(item.price.replace("Rp", "").replace(/\./g, "").trim());
+        const quantity = Number(item.quantity);
+
+        if (isNaN(price) || isNaN(quantity)) {
+            console.warn("Item tidak valid:", item);
+            return;
+        }
+
+        total += price * quantity;
+
+        cartItemsContainer.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>${item.name}</h3>
+                    <p>Harga: Rp ${formatRupiah(price)}</p>
+                    <p>Jumlah: ${quantity}</p>
+                    <button class="delete-btn" onclick="removeFromCart(${index})">Hapus</button>
                 </div>
-            `;
-        });
-        cartTotal.textContent = `Total: Rp ${total}`;
-        cartCount.textContent = cart.length;
-    }
-
-    async function removeFromCart(itemId) {
-        try {
-            await fetch(`http://localhost:5000/api/cart/${itemId}`, {
-                method: "DELETE",
-            });
-            fetchCart();
-        } catch (error) {
-            console.error("Gagal menghapus item:", error);
-        }
-    }
-
-    checkoutButton.addEventListener("click", async () => {
-        try {
-            const response = await fetch("http://localhost:5000/api/checkout", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-            });
-            if (!response.ok) throw new Error("Checkout gagal");
-            alert("Checkout berhasil!");
-            fetchCart();
-        } catch (error) {
-            console.error("Checkout error:", error);
-        }
+            </div>
+        `;
     });
 
-    fetchCart();
+    cartTotal.textContent = `Rp ${formatRupiah(total)}`;
+    cartCount.textContent = cart.length;
+}
+
+    window.removeFromCart = function(index) {
+        const cart = getCartFromStorage();
+        cart.splice(index, 1);
+        saveCartToStorage(cart);
+        renderCart();
+    };
+
+    function formatRupiah(angka) {
+        return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    checkoutButton.addEventListener("click", () => {
+    window.location.href = "checkout.html";
+});
+
+
+    renderCart();
 });

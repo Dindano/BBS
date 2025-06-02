@@ -23,18 +23,28 @@
     <main>
         <h1>Checkout</h1>
         <div class="checkout-container">
-            <div class="checkout-items" id="checkout-items"></div>
-            <div class="checkout-form">
+            <div class="cart-summary">
+                <div class="checkout-items" id="checkout-items"></div>
+                
+                <!-- Tambahkan elemen untuk total -->
+                <div class="cart-total">
+                    Total: <span id="total-amount">Rp0</span>
+                </div>
+            </div>
+            
+            <div class="form-container">
                 <h2>Detail Pengiriman</h2>
-                <form id="checkout-form">
+                <!-- Perbaikan: Ubah ID form agar tidak konflik -->
+                <form id="checkout-form-elements">
                     <label for="name">Nama Lengkap:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required placeholder="Nama penerima">
                     
                     <label for="address">Alamat Pengiriman:</label>
-                    <textarea id="address" name="address" required></textarea>
+                    <textarea id="address" name="address" required placeholder="Alamat lengkap pengiriman"></textarea>
                     
                     <label for="payment">Metode Pembayaran:</label>
                     <select id="payment" name="payment" required>
+                        <option value="">Pilih metode pembayaran</option>
                         <option value="transfer">Transfer Bank</option>
                         <option value="credit-card">Kartu Kredit</option>
                         <option value="e-wallet">E-Wallet (GoPay, OVO, Dana)</option>

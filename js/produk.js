@@ -1,12 +1,3 @@
-function updateCartIcon() {
-  const cartBadge = document.querySelector(".cart span");
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  
-  if (cartBadge) {
-    cartBadge.innerHTML = cart.length;
-  }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   updateCartIcon();
 
@@ -14,14 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", (e) => {
       const product = e.target.closest(".product");
+
+      // Ambil data dari atribut HTML (pastikan ada data-id, data-title, data-price)
       const productData = {
+        id: product.dataset.id,
+        name: product.dataset.title,
+        price: product.dataset.price,
         image: product.querySelector("img").src,
-        title: product.dataset.title,
-        price: product.dataset.price
+        size: "default", // default karena halaman ini belum ada pilihan ukuran
+        quantity: 1
       };
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const isExist = cart.some(item => item.title === productData.title);
+      const isExist = cart.some(item => item.id === productData.id && item.size === productData.size);
 
       if (!isExist) {
         cart.push(productData);

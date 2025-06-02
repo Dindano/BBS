@@ -1,12 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("✅ script.js terload!");
 
+    /** ========== Inisialisasi Cart dari localStorage ========== */
+    let cartItemsRaw = localStorage.getItem("cart");
+    let cartItems = [];
+
+    try {
+        let parsed = JSON.parse(cartItemsRaw);
+        if (Array.isArray(parsed)) {
+            cartItems = parsed;
+        }
+    } catch (e) {
+        console.warn("Gagal parsing cart:", e);
+    }
+
     /** ========== Fitur: Alert pada klik ikon keranjang ========== */
     const cartIcon = document.querySelector(".cart");
-    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
     if (cartIcon) {
         cartIcon.addEventListener("click", () => {
+            console.log("Isi cart saat ini:", cartItems);
             if (cartItems.length > 0) {
                 window.location.href = "keranjang.html";
             } else {
@@ -91,10 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function updateCartIcon() {
-        if (cartItems.length > 0) {
-            cartIcon.innerHTML = `🛒 (${cartItems.length})`;
-        } else {
-            cartIcon.innerHTML = "🛒";
+        if (cartIcon) {
+            if (cartItems.length > 0) {
+                cartIcon.innerHTML = `🛒 (${cartItems.length})`;
+            } else {
+                cartIcon.innerHTML = "🛒";
+            }
         }
     }
 

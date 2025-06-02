@@ -26,6 +26,30 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "img/salur.webp", 
             description: "Baju Kemeja wanita dengan bahan katun berkualitas tinggi. Cocok untuk hangout dan kerja.",
             detailImages: ["img/salur1.webp", "img/salur2.webp", "img/salur3.webp"]
+        },
+        { 
+            id: "4", 
+            name: "Kemeja Tambal sulam", 
+            price: "Rp 249.000", 
+            image: "img/Kemeja tambal sulam.webp", 
+            description: "Kemeja tambal sulam cocok untuk layering dengan gaya kasual.",
+            detailImages: ["img/Kemeja tambal sulam.webp", "img/Kemeja tambal sulam.webp", "img/Kemeja tambal sulam.webp"]
+        },
+        { 
+            id: "5", 
+            name: "Kemeja Fitted Shirt", 
+            price: "Rp 249.000", 
+            image: "img/Fitted Shirt.webp", 
+            description: "Kemeja Fitted Shirt cocok untuk layering dengan gaya kasual.",
+            detailImages: ["img/Fitted Shirt.webp", "img/Fitted Shirt.webp", "img/Fitted Shirt.webp"]
+        },
+        { 
+            id: "6", 
+            name: "Kemeja Korduroi", 
+            price: "Rp 299.000", 
+            image: "img/Kemeja Korduroi.webp", 
+            description: "Kemeja Korduroi cocok untuk layering dengan gaya kasual.",
+            detailImages: ["img/Kemeja Korduroi.webp", "img/Kemeja Korduroi.webp", "img/Kemeja Korduroi.webp"]
         }
     ];
 
